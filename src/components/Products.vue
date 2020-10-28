@@ -1,46 +1,64 @@
 <template>
     <div>
-        <v-row width="100%">
-            <v-col>
-            <v-card-title>CUSTOMIZABLE COLLECTIONS</v-card-title>
-            </v-col>
-        <v-col cols="12" md="3" justify-center v-for="product in PRODUCTS" :key="product.product_name">
-            <img height="200px" width="230px" :src="product.product_image"/>
-            <v-card-title><h1>{{product.product_name}}</h1></v-card-title>
-            <v-card-subtitle><p><h1>{{product.product_price}}</h1></v-card-subtitle>
-            <v-card>
-              <v-card-actions>
-                <v-btn
-                outlined
-                text
-                @click ="addToCart(product)">
-                Add to Cart
-                </v-btn>
-                <v-btn
-                outlined
-                rounded
-                text
-                color="orange">
-                Buy Now
-                </v-btn>
-                <v-btn
-                icon
-                dark
-                color="red"
-                @click="addToWishlist(product)">
-                <v-icon>mdi-heart</v-icon>
-                </v-btn>
-              </v-card-actions>
-            </v-card>
+        <v-card color="basil">
+    <v-card-title class="text-center justify-center py-6">
+      <h3>
+        CUSTOMIZABLE COLLECTIONS
+      </h3>
+    </v-card-title></v-card>
+        <v-row class="pa-md-16 mx-lg-auto">
+        <v-col cols="12" md="3" v-for="product in products" :key="product.product_name">
+            <img height="200px" width="100%" :src="product.product_image"/>
+            <h1 class="text-center justify-center">{{product.product_name}}</h1>
+            <p class="text-center justify-center">{{product.product_price}}</p>
         </v-col>
-</v-row>
-
-
+        </v-row>
     </div>
 </template>
 <script>
 export default {
-    
+   data(){
+        return{
+            
+            products : [
+                {
+                    "product_name" : "Custom T-shirts",
+                    "product_price" : "Rs.800",
+                    "product_image" : 'url("../assets/tshirt.png")',
+                },
+                {
+                    "product_name" : "Custom Clocks",
+                    "product_price" : "Rs.1000",
+                    "product_image" : "../assets/clock.png",
+                },
+                {
+                    "product_name" : "Custom Plate",
+                    "product_price" : "250",
+                    "product_image" : "../assets/plate.png",
+                },
+                {
+                    "product_name" : "Custom Mug",
+                    "product_price" : "250",
+                    "product_image" : "../assets/mug.png",
+                },
+                {
+                    "product_name" : "Custom Keychain",
+                    "product_price" : "250",
+                    "product_image" : "../assets/keychain.png",
+                },
+                {
+                    "product_name" : "Custom Pillow",
+                    "product_price" : "250",
+                    "product_image" : "../assets/pillow.png",
+                },
+                {
+                    "product_name" : "Custom Cap",
+                    "product_price" : "250",
+                    "product_image" : "../assets/cap.png",
+                },
+            ]
+        }
+    }, 
 }
 </script>
 <style>
