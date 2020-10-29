@@ -10,7 +10,7 @@
     <img class="pa-md-4" alt="Gift Monk logo" src="../assets/logo.png">
     <v-spacer></v-spacer>
     <v-btn icon class="pa-md-4 mx-lg-auto"><v-icon>mdi-magnify</v-icon></v-btn>
-    <v-btn icon class="pa-md-4 mx-lg-auto"><v-icon>mdi-account-circle</v-icon></v-btn>
+    <v-btn @click="goLogin()" icon class="pa-md-4 mx-lg-auto"><v-icon>mdi-account-circle</v-icon></v-btn>
     <v-btn icon class="pa-md-4 mx-lg-auto"><v-icon>mdi-cart-plus</v-icon></v-btn>
     <v-spacer></v-spacer>
     </v-toolbar>
@@ -57,6 +57,14 @@
 </template>
 <script>
 export default {
+  methods:{
+        goLogin(){
+            this.$router.push({name:'Login'})
+        },
+        // goCart(){
+        //     this.$router.push({name:'Cart'})
+        // }
+    },
     
 }
 </script>
