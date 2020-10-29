@@ -24,12 +24,12 @@ export default {
                 {
                     "product_name" : "Custom T-shirts",
                     "product_price" : "Rs.800",
-                    "product_image" : "../assets/tshirt.png",
+                    "product_image" : "https://giftmonk-online.s3.ap-south-1.amazonaws.com/tshirt.png",
                 },
                 {
                     "product_name" : "Custom Clocks",
                     "product_price" : "Rs.1000",
-                    "product_image" : "../assets/clock.png",
+                    "product_image" : "https://giftmonk-online.s3.ap-south-1.amazonaws.com/clock.png",
                 },
                 // {
                 //     "product_name" : "Custom Plate",
