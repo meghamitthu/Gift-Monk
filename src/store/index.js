@@ -52,17 +52,17 @@ export default new Vuex.Store({
   actions: {
     GET_PRODUCTS : async(context,payload) => {
       let {data} = await Axios.get('http://localhost:5000/api/v1/product/allproducts')
-      headers: {
-        'Authorization'= context.getters.TOKEN.replace()
-      }
+      // headers: {
+      //   'Authorization': context.getters.TOKEN.replace()
+      // }
       context.commit("SET_PRODUCTS",data);
       
     },
     GET_DETAILS : async(context,payload) => {
-      let {data} = await Axios.get('http://localhost:5000/api/v1/product/allproducts')
-      headers: {
-        'Authorization'= context.getters.TOKEN.replace()
-      }
+      let {data} = await Axios.get('http://localhost:5000/api/v1/product/productdetails')
+      // headers: {
+      //   'Authorization': context.getters.TOKEN.replace()
+      // }
       context.commit("SET_DETAILS",data)
     },
     USER_LOGIN : async(context,payload) => {

@@ -145,11 +145,16 @@
         this.count += 1;
         },
         decrement(){
-        this.count -= 1;
+          if(this.count>0){
+            this.count -= 1;
+          }
+          else{
+            this.count = 0;
+          }
         },
-        addToCart(product){
-          this.$store.commit("ADD_TOCART",product)
-          alert(JSON.stringify(product))
+        addToCart(details){
+          this.$store.commit("ADD_TOCART",details)
+          alert(JSON.stringify(details))
         },
     },
     async mounted ()
