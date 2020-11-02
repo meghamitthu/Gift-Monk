@@ -11,7 +11,10 @@
     <v-spacer></v-spacer>
     <v-btn icon class="pa-md-4 mx-lg-auto"><v-icon>mdi-magnify</v-icon></v-btn>
     <v-btn @click="goLogin()" icon class="pa-md-4 mx-lg-auto"><v-icon>mdi-account-circle</v-icon></v-btn>
-    <v-btn icon class="pa-md-4 mx-lg-auto"><v-icon>mdi-cart-plus</v-icon></v-btn>
+    <v-btn @click="goCart()" icon class="pa-md-4 mx-lg-auto"><v-badge
+        :content="CART.length"
+        color="red"
+      ><v-icon>mdi-cart-plus</v-icon></v-badge></v-btn>
     <v-spacer></v-spacer>
     </v-toolbar>
     <!-- <v-divider
@@ -56,15 +59,23 @@
   </div>
 </template>
 <script>
+import {mapGetters} from 'vuex';
 export default {
   methods:{
         goLogin(){
             this.$router.push({name:'Login'})
         },
-        // goCart(){
-        //     this.$router.push({name:'Cart'})
-        // }
+         goCart(){
+            this.$router.push({name:'Cart'})
+        }
     },
+     async mounted ()
+    {
+      this.$store.getters.CART
+    },
+     computed : {
+    ...mapGetters(['CART'])
+  },
     
 }
 </script>

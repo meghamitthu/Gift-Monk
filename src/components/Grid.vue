@@ -8,7 +8,7 @@
                             outlined
                             tile
                         >
-                            <v-img alt="Grid 3" src="https://giftmonk-online.s3.ap-south-1.amazonaws.com/bg-grid01.jpg" height="235px">
+                            <v-img id="image" alt="Grid 3" src="https://giftmonk-online.s3.ap-south-1.amazonaws.com/bg-grid01.jpg" height="235px">
                                 <v-container fill-height fluid>
                                     <v-layout justify-center align-center column pa-5>
                                         <div class="display-2 font-italic black--text text-center mb-3">Of</div>
@@ -26,10 +26,10 @@
                             tile
                             height="247px"
                         >
-                            <v-img alt="Grid 3" src="https://giftmonk-online.s3.ap-south-1.amazonaws.com/bg-grid02.jpg" height="240px">
+                            <v-img id="image" alt="Grid 3" src="https://giftmonk-online.s3.ap-south-1.amazonaws.com/bg-grid02.jpg" height="240px">
                                 <v-container fill-height fluid>
                                     <v-layout justify-center align-center column pa-5>
-                                        <div class="display-2 font-italic black--text text-center mb-3"></div>
+                                        <div class="display-2 black--text text-center mb-3">&#9734</div>
                                         <div class="display-2 font-italic black--text text-center mb-3">5000+</div>
                                         <div class="display-1 font-weight-medium red--text text-center mb-3">CUSTOMERS</div>
                                         
@@ -43,7 +43,7 @@
 
             <v-flex xs12 sm12 md4>
                 <v-card>
-                    <v-img alt="Grid 3" src="https://giftmonk-online.s3.ap-south-1.amazonaws.com/bg-grid03.jpg" height="500px">
+                    <v-img id="image" alt="Grid 3" src="https://giftmonk-online.s3.ap-south-1.amazonaws.com/bg-grid03.jpg" height="500px">
                         <v-container fill-height fluid>
                             <v-layout justify-center align-center column pa-5>
                                 <div class="display-2 font-italic red--text text-center mb-3">Summer Tags</div>
@@ -61,7 +61,7 @@
 
             <v-flex xs12 sm12 md4>
                 <v-card>
-                    <v-img src="https://giftmonk-online.s3.ap-south-1.amazonaws.com/bg-grid04.jpg" height="500px">
+                    <v-img class="image" height="500px">
                         <v-container fill-height fluid>
                             <v-layout justify-center align-center column pa-5>
                                 <div class="display-2 font-weight-black red--text text-center mb-3">ROMANTIC</div>
@@ -81,5 +81,8 @@ export default {
 }
 </script>
 <style>
-
+.image {
+    background-image: url("https://giftmonk-online.s3.ap-south-1.amazonaws.com/bg-grid04.jpg");
+    
+}
 </style>

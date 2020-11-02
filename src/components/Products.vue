@@ -8,7 +8,7 @@
     </v-card-title></v-card>
         <v-row class="px-md-16 mx-lg-auto">
         <v-col cols="12" md="3" v-for="product in products" :key="product.product_name">
-            <img height="200px" width="100%" :src="product.product_image"/>
+            <img height="200px" @click="goDetails()" width="100%" :src="product.product_image"/>
             <h1 class="text-center justify-center">{{product.product_name}}</h1>
             <p class="text-center justify-center">{{product.product_price}}</p>
         </v-col>
@@ -58,7 +58,12 @@ export default {
                 // },
             ]
         }
-    }, 
+    },
+    methods:{
+        goDetails(){
+            this.$router.push({name:'Products'})
+        }, 
+    }
 }
 </script>
 <style>

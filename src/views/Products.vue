@@ -1,7 +1,10 @@
 <template>
-  <div class="login">
+  <div class="products">
     <div>
       <Navigation/>
+    </div>
+    <div>
+      <Details/>
     </div>
      <div>
       <Footer/>
@@ -14,11 +17,12 @@
 
 <script>
 import Navigation from '@/components/Navigation.vue'
+import Details from '@/components/Details.vue'
 import Footer from '@/components/Footer.vue'
 export default {
-  name: 'Login',
+  name: 'Products',
   components: {
-     Navigation, Footer
+     Navigation, Details, Footer
   }
 }
 </script>

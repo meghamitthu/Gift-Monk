@@ -24,13 +24,13 @@
                     flat
                     width="40%"
                     height="150px"
-                    class="text-center"
+                    class="justify-center"
                 >
                     <h3>ABOUT</h3>
                     <p></p>
-                    <h4># News And Stories</h4>
-                    <h4># Our Studio</h4>
-                    <h4># Stocklists</h4>
+                    <h4>&#8226 News And Stories</h4>
+                    <h4>&#8226 Our Studio</h4>
+                    <h4>&#8226 Stocklists</h4>
                 </v-card>
                 <v-card
                     width="40%"
@@ -39,20 +39,20 @@
                 >
                     <h3>CATEGORIES</h3>
                     <p></p>
-                    <h4># Customizable Gifts</h4>
-                    <h4># Custom Plates</h4>
-                    <h4># Custom Clocks</h4>
+                    <h4>&#8226 Customizable Gifts</h4>
+                    <h4>&#8226 Custom Plates</h4>
+                    <h4>&#8226 Custom Clocks</h4>
                 </v-card>
             </v-card>
         </v-card>
         <v-card flat>
            <v-card
-            class="d-flex justify-space-between mb-6 text-center"
+            class="d-flex mb-6 text-center"
             flat
             >
                 <v-card
                     flat
-                    width="100%"
+                    width="80%"
                 >
                     <h3>FOLLOW US</h3>
                     <v-btn icon> <v-icon large class="pa-md-4 mx-lg-auto">mdi-facebook</v-icon></v-btn>
@@ -82,6 +82,7 @@
                             <v-layout fill-height>
                                 <v-textarea
                                     label="Your Email"
+                                    
                                     outlined
                                     rows="1"
                                     row-height="15"
@@ -90,6 +91,7 @@
                         </v-container>
                     <v-card-title primary-title>
                         <v-btn 
+                            @click="Savemail(email)"
                             large
                             class="white--text"                             
                             color= #962a28>
@@ -107,6 +109,17 @@
 </template>
 <script>
 export default {
+    data() {
+        return{
+            emails:[]
+        }
+    },
+ methods:{
+     Savemail(email){
+        this.emails.push(email)
+        alert(JSON.stringify(emails))
+     }
+ },
     
 }
 </script>

@@ -56,10 +56,10 @@
             <v-card-subtitle class=" font-weight-light text-center justify-center">USE YOUR SOCIAL MEDIA ACCOUNT</v-card-subtitle>
             <v-form>
               <v-card-actions class="text-center justify-center">
-            <v-btn class="white--text px-md-7" color= #6A1B9A primary block large rounded><h3>FACEBOOK</h3></v-btn>
+            <v-btn class="white--text px-md-7" color= #3b5998 primary block large rounded><h3>FACEBOOK</h3></v-btn>
             </v-card-actions>
             <v-card-actions class="text-center justify-center">
-            <v-btn class="white--text px-md-7" color= #B71C1C primary block large rounded><h3>GOOGLE</h3></v-btn>
+            <v-btn class="white--text px-md-7" color= #ea4335 primary block large rounded><h3>GOOGLE</h3></v-btn>
             </v-card-actions>
             <p></p>
             <v-card-actions class="text-center justify-center">
