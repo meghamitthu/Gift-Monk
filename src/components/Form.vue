@@ -26,10 +26,10 @@
             <v-card-subtitle class="white--text font-weight-light text-center justify-center">Use the registered e-mail and password</v-card-subtitle>
             <p></p>
             <v-form>
-            <v-text-field dark solo-inverted outlined prepend-icon="mdi-account-circle" name="Username" label="Username"></v-text-field>
-            <v-text-field dark solo-inverted outlined prepend-icon="mdi-lock-outline" name="Password" label="Password" type="password"></v-text-field>
+            <v-text-field dark solo-inverted prepend-icon="mdi-account-circle" name="username" label="Username"></v-text-field>
+            <v-text-field dark solo-inverted prepend-icon="mdi-lock-outline" name="password" label="Password" type="password"></v-text-field>
             <v-card-actions class="text-center justify-center">
-              <v-btn class="px-md-7" primary large rounded><h3>LOGIN NOW</h3></v-btn>
+              <v-btn @click="login()" class="px-md-7" primary large rounded><h3>LOGIN NOW</h3></v-btn>
             </v-card-actions>
             <p></p>
             <v-layout justify-center>
@@ -87,12 +87,21 @@
 <script>
   
   export default {
-    
     data(){
       return {
-        
+        username: "",
+        password: ""
       };
     },
+    methods: {
+      login() {
+        let payload = {
+          username: this.username,
+          password: this.password
+        };
+        this.$store.dispatch("USER_LOGIN",payload)
+      }
+    }
   }
 </script>
 <style>
