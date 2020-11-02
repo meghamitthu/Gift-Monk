@@ -26,15 +26,15 @@
             <v-card-subtitle class="white--text font-weight-light text-center justify-center">Use the registered e-mail and password</v-card-subtitle>
             <p></p>
             <v-form>
-              <v-text-field dark solo-inverted prepend-icon="mdi-account-circle" v-model="username" label="Username"></v-text-field>
-              <v-text-field dark solo-inverted prepend-icon="mdi-lock-outline" v-model="password" label="Password" type="password"></v-text-field>
-                <v-card-actions class="text-center justify-center">
-                  <v-btn @click="login()" class="px-md-7" primary large rounded><h3>LOGIN NOW</h3></v-btn>
-                </v-card-actions>
-                <p></p>
-                <v-layout justify-center>
-                <h5><a href="#" @click="changepassword()" class="white--text font-weight-thin px-md-16">I don't remember my password</a></h5>
-                </v-layout>
+            <v-text-field dark solo-inverted outlined prepend-icon="mdi-account-circle" v-model="email" label="Email"></v-text-field>
+            <v-text-field dark solo-inverted outlined prepend-icon="mdi-lock-outline" v-model="password" label="Password" type="password"></v-text-field>
+            <v-card-actions class="text-center justify-center">
+              <v-btn @click="login(email ,password)" class="px-md-7" primary large rounded><h3>LOGIN NOW</h3></v-btn>
+            </v-card-actions>
+            <p></p>
+            <v-layout justify-center>
+            <h5><a href="#" class="white--text font-weight-thin px-md-16">I don't remember my password</a></h5>
+            </v-layout>
             </v-form>
           </v-card>
         </v-container>
@@ -71,7 +71,7 @@
             </v-card-actions>
             <v-layout justify-center>
               <p></p>
-            <h5><a href="#" class="white--text font-weight-thin px-md-16">I don't remember my password</a></h5>
+            <h5><a href="#" @click="changepassword()" class="white--text font-weight-thin px-md-16">I don't remember my password</a></h5>
             </v-layout>
             </v-form>
           </v-card>
@@ -87,27 +87,31 @@
 <script>
   
   export default {
+    
     data(){
       return {
-        username: "",
-        password: ""
+        email : "",
+        password : ""
       };
     },
+    
     methods: {
-      login() {
-        let payload = {
-          username: this.username,
-          password: this.password
+    login() 
+         {
+           let payload = {
+          "email": this.email,
+          "password": this.password
         };
-        this.$store.dispatch("USER_LOGIN",payload)
-        alert(JSON.stringify(payload))
-      },
-      changepassword() {
+        this.$store.dispatch('ADMIN_LOGIN',payload)
+            },
+            changepassword() {
         prompt("Change password")
       }
-    }
+            
+           
+    
+  },
   }
 </script>
 <style>
-
 </style>
